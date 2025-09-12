@@ -1,0 +1,93 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar-header {
+    background-color: black;
+    color: white;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    padding: 0 120px;
+    flex-wrap: wrap;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 30px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-buttons li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 15px 20px;
+}
+
+.h1container {
+    background-color: #c6bfbf;
+    width: 100%;
+    box-sizing: border-box;
+    padding-bottom: 20px;
+    padding-top: 5px;
+    position: relative
+}
+
+.h1container h1 {
+    font-size: 2.5rem;
+    padding: 15px 200px 5px;
+}
+
+.h1container p {
+    font-size: 1.0rem;
+    padding: 0px 200px;
+}
+
+.content {
+    flex:1;
+    display:grid;
+    column-gap: 120px;
+    grid-template-columns: auto auto auto;
+    padding: 80px 10%;
+    font-size: 1rem;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.navbar-footer {
+    background-color: #0b4d14;
+    color: white;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    padding: 0 120px;
+}
+
+.nav-buttons2 {
+    display: flex;
+    gap: 30px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0px 800px;
+}
+
+.nav-buttons2 li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 15px 20px;
+    position: relative
+}
