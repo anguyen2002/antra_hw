@@ -1,0 +1,35 @@
+<!-- save the data and use directives to display all the titles & descriptions. -->
+<div *ngIf="tasks.length > 0"> 
+    <ng-container *ngFor="let task of tasks"> 
+<!-- Create a custom directive that changes the background color of a task when the user hovers over it -->
+        <li appChangeColor> 
+            <h3>Title: {{task.title}}</h3>
+            <p>Description: {{task.description}}</p>
+        </li>
+    </ng-container>
+</div>
+
+<!-- conditionally display a message “No tasks available” when the task list is empty. -->
+<div *ngIf="tasks.length == 0">No tasks available</div>
+
+<!-- Add input fields to allow the user to add a new task title & description. -->
+<label>Enter Title: </label> <br>
+    <input [(ngModel)]="userInputTitle" /> <br>
+<label>Enter Description: </label> <br>
+    <input [(ngModel)]="userInputDescription" /> <br>
+
+<!-- Add a button, when it’s clicked, save the new task into the original array -->
+<button (click)="onSubmit()">Submit</button>
+
+<!-- Bind input fields with formControls, add required validators. And display error message on webpage if there is any. -->
+<h3>Form Control fields</h3>
+<label>Enter Title: </label> <br>
+<input [formControl] = 'newTitle'/> <br>
+<label>Enter Description: </label> <br>
+<input [formControl] = 'newDescription'/> <br>
+<p *ngIf="newTitle.invalid && newTitle.touched">Error: Title is required</p>
+<p *ngIf="newDescription.invalid && newDescription.touched">Error: Description is required</p>
+
+<!-- Prevent users from adding empty tasks to the array. (Add condition to check the form control value when the button is clicked) -->
+<button (click)="onSubmitForm()">Submit</button>
+
