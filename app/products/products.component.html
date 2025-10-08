@@ -1,0 +1,8 @@
+<div *ngIf="!errorMessage">
+    <div *ngFor="let product of productsList">
+        <p>{{product.title}}</p>
+        <p>{{product.category}}</p>
+    </div>
+</div>
+
+<p *ngIf="errorMessage">{{errorMessage}}</p>
