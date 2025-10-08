@@ -37,7 +37,7 @@ export class TasklistComponent {
 
  newTitle = new FormControl('',Validators.required);
  newDescription = new FormControl('',Validators.required);
-
+ userInput = '';
 
 
  onSubmit() {
@@ -61,4 +61,14 @@ export class TasklistComponent {
   this.newDescription.reset('');
  }
 
+ getChild(e:Event) {
+  console.log(e);
+ }
+
+ onSearch() {
+  const arr = this.tasks.filter((task)=> {
+    return task.title.toLocaleLowerCase().includes(this.userInput);
+  })
+  console.log(arr);
+ }
 }

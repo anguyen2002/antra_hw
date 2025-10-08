@@ -1,0 +1,11 @@
+<div appChangeColor>
+    <p>{{details.title}}</p>
+    <p>{{details.description}}</p>
+    <button (click)="onClick()">Edit</button>
+    <div *ngIf="clicked">
+        <input [(ngModel)]="newTitle"/>
+        <input [(ngModel)]="newDescription"/>
+        <button (click)="onSubmit()">Submit</button>
+    </div>
+</div>
+

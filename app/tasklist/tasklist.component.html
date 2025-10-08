@@ -1,11 +1,12 @@
 <!-- save the data and use directives to display all the titles & descriptions. -->
 <div *ngIf="tasks.length > 0"> 
+    <label>Search Title</label>
+    <input  [(ngModel)]="userInput" (keyup)="onSearch()"/>
     <ng-container *ngFor="let task of tasks"> 
 <!-- Create a custom directive that changes the background color of a task when the user hovers over it -->
-        <li appChangeColor> 
-            <h3>Title: {{task.title}}</h3>
-            <p>Description: {{task.description}}</p>
-        </li>
+        <app-task-detail [details]="task" (changedDetails)="getChild($event)"> 
+            
+        </app-task-detail>
     </ng-container>
 </div>
 
