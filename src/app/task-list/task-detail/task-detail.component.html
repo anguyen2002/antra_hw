@@ -1,0 +1,21 @@
+<div class = 'mainContainer'>
+    <div class = 'taskContainer' appChangeBorderColor (click)="onSelectTask()">
+        <h3>{{taskDetails.title}}</h3>
+        <p>{{taskDetails.description}}</p>
+    </div>
+    <div class = "userInputContainer" *ngIf="selectedTask">
+        <form [formGroup]="editTaskForm"> 
+            <label>Title</label>
+            <input formControlName="title"/>
+            <label>Description</label>
+            <input formControlName="description"/>
+            <label>Due Date</label>
+            <input formControlName="duedate"/>
+            <label>Status</label>
+            <input formControlName="status"/>
+            <label>Priority</label>
+            <input formControlName="priority"/> <br>
+        </form>
+        <button (click)="onSave()">Save</button>
+    </div>
+</div>

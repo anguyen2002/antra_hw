@@ -1,0 +1,16 @@
+<h1>Task Manager</h1>
+<hr>
+<label>Search: </label>
+<input [(ngModel)]="userSearchInput" (keyup)="onSearch()"/> <br>
+<label>Filter by Status: </label>
+<select [(ngModel)]="selectedStatus">
+    <option value="Incomplete">Incomplete</option>
+    <option value="In Progress">In-Progress</option>
+    <option value="Completed">Complete</option>
+</select>
+<div *ngFor="let task of displayedTasks | statusFilter:selectedStatus" >
+    <app-task-detail [taskDetails]="task" (editedDetails)="updateTask($event)">
+
+    </app-task-detail>
+    
+</div>

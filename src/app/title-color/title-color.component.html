@@ -1,0 +1,7 @@
+<h1 [ngStyle]="{'color': currentColor, 'font-size': '40px'}">Complete Angular Tutorial For Beginners</h1>
+<div *ngFor="let item of paragraphs; let i = index"
+    [style.border]="'1px solid ' + (sectionHighlightIndex === i ? item.color : 'black')">
+    <h2>{{item.title}}</h2>
+    <p>{{item.body}}</p>
+    <app-button-control [selectedColor]="item.color" (titleColor)="receiveCurrentColor($event,i)"></app-button-control>
+</div>

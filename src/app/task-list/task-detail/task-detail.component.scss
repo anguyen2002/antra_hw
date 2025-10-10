@@ -1,0 +1,32 @@
+.mainContainer {
+  display: flex;               
+  align-items: stretch;     
+  gap: 30px;                   
+  margin-bottom: 20px;
+}
+
+.taskContainer {
+  display: block;
+  border: 2px solid white;
+  border-radius: 5px;
+  width: 300px;
+}
+
+.userInputContainer {
+  width: 600px;
+  background-color: #504e4e;
+  padding: 15px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column; 
+}
+
+.userInputContainer input {
+    width: 100%;
+}
+
+.userInputContainer button {
+    background-color: purple;
+    color: white;
+    border: 2px solid black;
+}
